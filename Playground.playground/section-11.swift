@@ -1,0 +1,1 @@
+numbers.filter(isPrime)
