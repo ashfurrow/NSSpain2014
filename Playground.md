@@ -8,7 +8,7 @@ import Foundation
 var numbers = [1, 52, 4, 90, 17, 42, 72, 101, 55, 3]
 ```
 
-Pretty straightforward – just an array of some integers. Let's say we'd like to sort that array. How would we do it? Well, we know that Swift as a `sorted` method on the Array type that returns a newly sorted array, according to the closure that we pass into the `sorted` method. Let's take a look. 
+Pretty straightforward – just an array of some integers. Let's say we'd like to sort that array. How would we do it? Well, we know that Swift has a `sorted` method on the Array type that returns a newly sorted array, according to the closure that we pass into the `sorted` method. Let's take a look. 
 
 
 ```swift
@@ -188,7 +188,7 @@ func getOldestPerson_Imperatively(people: [Person]) -> Person? {
 getOldestPerson_Imperatively(people)
 ```
 
-Let's see how this could be rewritten to be more function. 
+Let's see how this could be rewritten to be more functional. 
 
 ```swift
 func getOldestPerson_Functionally(people: [Person]) -> Person? {
