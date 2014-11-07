@@ -1,6 +1,6 @@
 func getPeopleStillLeftToCelebrateBirthday_Imperatively(people: [Person]) -> [Person] {
-    let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
-    let currentDay = calendar.ordinalityOfUnit(NSCalendarUnit.CalendarUnitDay, inUnit: NSCalendarUnit.CalendarUnitYear, forDate: NSDate.date())
+    let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
+    let currentDay = calendar.ordinalityOfUnit(NSCalendarUnit.CalendarUnitDay, inUnit: NSCalendarUnit.CalendarUnitYear, forDate: NSDate())
     
     var results = [Person]()
     for person in people {

@@ -115,8 +115,8 @@ Let's say we want to get the people who still have yet to celebrate their birthd
 
 ```swift
 func getPeopleStillLeftToCelebrateBirthday_Imperatively(people: [Person]) -> [Person] {
-    let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
-    let currentDay = calendar.ordinalityOfUnit(NSCalendarUnit.CalendarUnitDay, inUnit: NSCalendarUnit.CalendarUnitYear, forDate: NSDate.date())
+    let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
+    let currentDay = calendar.ordinalityOfUnit(NSCalendarUnit.CalendarUnitDay, inUnit: NSCalendarUnit.CalendarUnitYear, forDate: NSDate())
     
     var results = [Person]()
     for person in people {
@@ -136,8 +136,8 @@ This uses a very similar technique to the one above that collected names. And ju
 
 ```swift
 func getPeopleStillLeftToCelebrateBirthday_FunctionallyButCouldBeBetter(people: [Person]) -> [Person] {
-    let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
-    let currentDay = calendar.ordinalityOfUnit(NSCalendarUnit.CalendarUnitDay, inUnit: NSCalendarUnit.CalendarUnitYear, forDate: NSDate.date())
+    let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
+    let currentDay = calendar.ordinalityOfUnit(NSCalendarUnit.CalendarUnitDay, inUnit: NSCalendarUnit.CalendarUnitYear, forDate: NSDate())
     
     return people.filter{ (person: Person) -> Bool in
         let birthdayDay = calendar.ordinalityOfUnit(NSCalendarUnit.CalendarUnitDay, inUnit: NSCalendarUnit.CalendarUnitYear, forDate: person.birthdate)
@@ -152,8 +152,8 @@ Nice. We're using `filter`, another common function in functional programming. B
 
 ```swift
 func getPeopleStillLeftToCelebrateBirthday_Functionally(people: [Person]) -> [Person] {
-    let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
-    let currentDay = calendar.ordinalityOfUnit(NSCalendarUnit.CalendarUnitDay, inUnit: NSCalendarUnit.CalendarUnitYear, forDate: NSDate.date())
+    let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
+    let currentDay = calendar.ordinalityOfUnit(NSCalendarUnit.CalendarUnitDay, inUnit: NSCalendarUnit.CalendarUnitYear, forDate: NSDate())
     
     func celebratedBirthdayYet(person: Person) -> Bool {
         let birthdayDay = calendar.ordinalityOfUnit(NSCalendarUnit.CalendarUnitDay, inUnit: NSCalendarUnit.CalendarUnitYear, forDate: person.birthdate)
